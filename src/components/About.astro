@@ -1,0 +1,171 @@
+---
+import TechStack from './TechStack.astro';
+---
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 1s ease-out;
+  }
+</style>
+
+<section id="about" class="py-20 relative">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        <span class="text-white">Who am </span>
+        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">I</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-5 gap-12 items-center mb-16">
+      <!-- Profile Card with Photo -->
+      <div class="md:col-span-2 relative group animate-fade-in">
+        <div class="relative overflow-hidden rounded-3xl border-2 border-gray-700 hover:border-primary/50 transition-all duration-500 hover:scale-105">
+          <img 
+            src="/profile.jpg" 
+            alt="Mohamed Aziz Laifi" 
+            class="w-full h-auto object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-darker via-darker/95 to-transparent p-6">
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-lg font-bold border-2 border-white/20">
+                MA
+              </div>
+              <div class="ml-3">
+                <h3 class="text-lg font-bold text-white">Mohamed Aziz</h3>
+                <p class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Laifi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Text -->
+      <div class="md:col-span-3 space-y-6 text-gray-300 animate-slide-in">
+        <p class="text-lg leading-relaxed">
+          I'm a creative problem-solver with a passion for turning complex challenges into 
+          <span class="text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text font-semibold">elegant solutions</span> 
+          that make a real difference.
+        </p>
+        <p class="text-lg leading-relaxed">
+          With experience in full-stack development, I thrive on building 
+          <span class="text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text font-semibold">intuitive, scalable</span> 
+          web experiences through clean code and thoughtful design.
+        </p>
+        <p class="text-lg leading-relaxed">
+          Currently pursuing Software Engineering at <span class="text-primary font-semibold">ISI</span> with 
+          a growing passion for <span class="text-secondary font-semibold">Artificial Intelligence</span>.
+        </p>
+        <div class="pt-4">
+          <a href="#contact" 
+             class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 group">
+            Get in touch
+            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- What I Do -->
+    <div class="mb-16">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-3xl font-bold mb-8 text-center">What I do?</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+        
+        <details class="group bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700 hover:border-primary/50 transition-all duration-300" open>
+          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between">
+            <span class="flex items-center">
+              <span class="text-2xl mr-3">🖥️</span>
+              Full-Stack Development
+            </span>
+            <span class="transform group-open:rotate-180 transition-transform duration-300">▼</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 space-y-2">
+            <p>• React and Next.js applications</p>
+            <p>• TypeScript and modern JavaScript</p>
+            <p>• Responsive UI/UX design</p>
+            <p>• REST API development</p>
+          </div>
+        </details>
+
+        <details class="group bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700 hover:border-primary/50 transition-all duration-300" open>
+          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between">
+            <span class="flex items-center">
+              <span class="text-2xl mr-3">🤖</span>
+              AI Development
+            </span>
+            <span class="transform group-open:rotate-180 transition-transform duration-300">▼</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 space-y-2">
+            <p>• Machine Learning with Python</p>
+            <p>• RAG systems development</p>
+            <p>• LLM integration and prompt engineering</p>
+            <p>• AI-powered applications</p>
+          </div>
+        </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Stack Marquee -->
+    <div class="mt-16">
+      <h3 class="text-2xl font-bold text-center mb-8">Technologies I Work With</h3>
+      <TechStack />
+    </div>
+
+    <!-- Terminal Section -->
+    <div class="mt-16 max-w-3xl mx-auto">
+      <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-700 shadow-2xl">
+        <div class="bg-gray-800 px-4 py-2 flex items-center space-x-2 border-b border-gray-700">
+          <div class="w-3 h-3 rounded-full bg-red-500"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+          <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          <span class="text-sm text-gray-400 ml-4">terminal</span>
+        </div>
+        <div class="p-6 font-mono text-sm">
+          <p class="text-green-400">aziz@portfolio:~$</p>
+          <p class="text-gray-300 mt-2">
+            <span class="text-primary">$</span> npm run build-dreams
+          </p>
+          <p class="text-green-400 mt-4">✓ Compiling creativity...</p>
+          <p class="text-green-400 mt-2">✓ Bundling innovation...</p>
+          <p class="text-green-400 mt-2">✓ Deploying solutions...</p>
+          <p class="text-yellow-400 mt-4">🚀 Ready to change the world!</p>
+          <p class="text-gray-300 mt-4">
+            <span class="text-green-400">aziz@portfolio:~$</span>
+            <span class="animate-pulse">_</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

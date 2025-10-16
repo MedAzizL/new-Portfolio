@@ -1,0 +1,58 @@
+---
+const technologies = [
+  { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+  { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+  { name: 'Next.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+  { name: 'LangChain', logo: 'https://avatars.githubusercontent.com/u/126733545?s=200&v=4' },
+  { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+  { name: 'Spring', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
+  { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+  { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+  { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+  { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+  { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+  { name: 'Hugging Face', logo: 'https://huggingface.co/front/assets/huggingface_logo-noborder.svg' },
+  { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+  { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+];
+---
+
+<div class="relative overflow-hidden py-8">
+  <div class="tech-scroll">
+    {[...technologies, ...technologies, ...technologies].map((tech, index) => (
+      <div key={index} class="tech-item flex-shrink-0 mx-4 p-5 bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-xl backdrop-blur-sm border border-gray-700/50 hover:border-primary/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20">
+        <div class="w-14 h-14 mb-3 mx-auto flex items-center justify-center">
+          <img src={tech.logo} alt={tech.name} class="w-full h-full object-contain filter brightness-90 hover:brightness-110 transition-all" />
+        </div>
+        <div class="text-sm text-gray-300 whitespace-nowrap font-medium">{tech.name}</div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .tech-scroll {
+    display: flex;
+    animation: scroll 15s linear infinite;
+  }
+
+  .tech-item {
+    min-width: 140px;
+    text-align: center;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-140px * 15 - 32px * 15));
+    }
+  }
+
+  .tech-scroll:hover {
+    animation-play-state: paused;
+  }
+</style>
+

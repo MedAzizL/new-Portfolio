@@ -1,0 +1,150 @@
+---
+const projects = [
+  {
+    title: 'AI Powered Document Assistant',
+    description: 'A lightweight Retrieval-Augmented Generation system built with TypeScript. Implements vector search and semantic retrieval for enhanced AI-powered responses. Features include document embedding, efficient query processing, and context-aware generation for building intelligent applications.',
+    status: 'Completed',
+    technologies: ['Next.js', 'TypeScript', 'FastAPI', 'Vector DB'],
+    github: 'https://github.com/MedAzizL/light-rag-system',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+    gradient: 'from-blue-500 to-cyan-500'
+  },
+  {
+    title: 'ResearchHub Management System',
+    description: 'A comprehensive research management platform built with Java and Spring Boot. Features include paper submission, peer review workflow, user authentication, and advanced search capabilities. Implements RESTful APIs with robust backend architecture and database integration.',
+    status: 'Completed',
+    technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'REST API'],
+    github: 'https://github.com/MedAzizL/ResearchHub-Management-System',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
+    gradient: 'from-green-500 to-emerald-500'
+  },
+  {
+    title: 'Diabetes Prediction System',
+    description: 'An AI-powered machine learning project for predicting diabetes using patient health data. Implements multiple ML algorithms including Random Forest, SVM, and Neural Networks. Features comprehensive data preprocessing, model evaluation, and interactive visualizations.',
+    status: 'Completed',
+    technologies: ['Python', 'Scikit-learn', 'Pandas', 'Jupyter'],
+    github: 'https://github.com/MedAzizL/Diabetes-prediction-project',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+    gradient: 'from-yellow-500 to-orange-500'
+  },
+  {
+    title: 'Resume Classifier',
+    description: 'An AI-powered system that automatically analyzes resumes and classifies them into job categories using a fine-tuned DistilBERT model. Features multi-format support (PDF, DOCX, TXT), automatic extraction of contact info, skills, and education, with REST API interface.',
+    status: 'Completed',
+    technologies: ['FastAPI', 'Hugging Face', 'Next.js', 'TypeScript'],
+    github: 'https://github.com/MedAzizL/Resume-Classifier',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+    gradient: 'from-purple-500 to-pink-500'
+  }
+];
+---
+
+<section id="projects" class="py-20 bg-dark/30">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        <span class="text-white">My </span>
+        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Work</span>
+      </h2>
+      <p class="text-gray-400 text-lg">Projects</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {projects.map((project, index) => (
+        <div 
+          class="project-card group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700 overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <div class="p-8">
+            {/* Header with Logo and Status */}
+            <div class="flex items-start justify-between mb-6">
+              <div class={`w-16 h-16 rounded-xl bg-gradient-to-br ${project.gradient} p-3 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <img src={project.logo} alt={project.title} class="w-full h-full object-contain filter brightness-0 invert" />
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500/20 text-green-400 border border-green-500/50">
+                {project.status}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h3 class="text-2xl font-bold mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text transition-all duration-300">
+              {project.title}
+            </h3>
+
+            {/* Description */}
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              {project.description}
+            </p>
+
+            {/* Technologies */}
+            <div class="flex flex-wrap gap-2 mb-6">
+              {project.technologies.map((tech) => (
+                <span class="px-3 py-1 bg-gray-700/70 hover:bg-gray-600/70 rounded-lg text-xs text-gray-300 font-medium transition-colors duration-200">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {/* GitHub Link */}
+            <a 
+              href={project.github} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 group/link"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span class="text-sm">View Code</span>
+              <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* GitHub Link */}
+    <div class="text-center mt-12">
+      <a 
+        href="https://github.com/MedAzizL" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center space-x-2 text-lg text-gray-300 hover:text-primary transition-colors duration-300"
+      >
+        <span>More projects on</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+        <span class="font-bold">GitHub</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .project-card {
+    animation: fade-in-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+

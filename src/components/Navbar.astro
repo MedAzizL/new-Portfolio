@@ -1,0 +1,70 @@
+---
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-darker/80 backdrop-blur-lg border-b border-gray-800">
+  <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-center md:justify-end">
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="nav-link hover:text-primary transition-colors duration-300">Home</a>
+        <a href="#about" class="nav-link hover:text-primary transition-colors duration-300">About</a>
+        <a href="#projects" class="nav-link hover:text-primary transition-colors duration-300">Projects</a>
+        <a href="#contact" class="nav-link hover:text-primary transition-colors duration-300">Contact</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-gray-800">
+    <div class="px-6 py-4 space-y-4">
+      <a href="#home" class="block nav-link hover:text-primary transition-colors duration-300">Home</a>
+      <a href="#about" class="block nav-link hover:text-primary transition-colors duration-300">About</a>
+      <a href="#projects" class="block nav-link hover:text-primary transition-colors duration-300">Projects</a>
+      <a href="#contact" class="block nav-link hover:text-primary transition-colors duration-300">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking a link
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>
+
+<style>
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>
+
